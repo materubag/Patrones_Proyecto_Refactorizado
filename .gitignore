@@ -1,0 +1,19 @@
+# Archivos compilados
+*.class
+
+# Archivos de log
+*.log
+
+# Directorios de construcción
+build/
+dist/
+
+# Archivos específicos de NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+.nb-gradle/
+
+# Archivos temporales
+*.bak
+*~
