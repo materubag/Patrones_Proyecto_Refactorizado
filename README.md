@@ -1,1 +1,1 @@
-Contraseña root para el ususario: DqwBwDN0RttQ0IJfOaXYng==
+Contraseña root para el usuario: DqwBwDN0RttQ0IJfOaXYng==
