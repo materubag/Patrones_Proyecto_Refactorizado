@@ -7,6 +7,8 @@ package Gestor;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -36,19 +38,15 @@ public class MySQL extends GestorBD {
             DriverManager.setLoginTimeout(2);
             this.con = (Connection) DriverManager.getConnection(this.url, super.getUser(), super.getClave());
 
-            if (this.con != null) {
-                //System.out.println("conectado");
-            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
     }
-
+    
     public void desconectar() throws SQLException {
         if (this.con != null) {
             if (!this.con.isClosed()) {
                 this.con.close();
-                //System.out.println("desconectado");
             }
         }
     }

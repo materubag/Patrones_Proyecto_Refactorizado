@@ -11,8 +11,8 @@ package Modelo;
 public class Ciudad {
     private String codigo;
     private String nombre;
-    private String codigoProv;
-    private String nombreProv;
+    private String codigoProvincia;
+    private String nombreProvincia;
 
     public String getCodigo() {
         return this.codigo;
@@ -30,20 +30,20 @@ public class Ciudad {
         this.nombre = nombre;
     }
 
-    public String getCodigoProv() {
-        return this.codigoProv;
+    public String getCodigoProvincia() {
+        return this.codigoProvincia;
     }
 
-    public void setCodigoProv(String codigoProv) {
-        this.codigoProv = codigoProv;
+    public void setCodigoProvincia(String codigoProvincia) {
+        this.codigoProvincia = codigoProvincia;
     }
 
-    public String getNombreProv() {
-        return this.nombreProv;
+    public String getNombreProvincia() {
+        return this.nombreProvincia;
     }
 
-    public void setNombreProv(String nombreProv) {
-        this.nombreProv = nombreProv;
+    public void setNombreProvincia(String nombreProvincia) {
+        this.nombreProvincia = nombreProvincia;
     }
     
     

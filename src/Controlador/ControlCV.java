@@ -24,7 +24,7 @@ import Modelo.Venta;
 import Recursos.Codigo;
 import Recursos.ControlDatos;
 import Recursos.QR;
-import Vista.PCompraV;
+import Vista.PanelCompraVenta;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -41,9 +41,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlCV implements ActionListener {
 
-    PCompraV cv = new PCompraV();
+    PanelCompraVenta cv = new PanelCompraVenta();
 
-    public ControlCV(PCompraV cv) {
+    public ControlCV(PanelCompraVenta cv) {
         this.cv = cv;
         this.cv.jButtonAddCV.addActionListener(this);
         this.cv.jButtonCompra.addActionListener(this);
@@ -187,14 +187,14 @@ public class ControlCV implements ActionListener {
                 k.setSalida(0);
                 if (cd.decimal(this.cv.jTextFieldPrecio.getText()) 
                         && !this.cv.jTextFieldPrecio.getText().trim().equals("")) {
-                    k.setCostoU(Float.parseFloat(this.cv.jTextFieldPrecio.getText()));
+                    k.setCostoUnitario(Float.parseFloat(this.cv.jTextFieldPrecio.getText()));
                     this.cv.jLabelTotal.setVisible(true);
                     this.cv.jLabelErrorPrecio.setVisible(false);
                     this.cv.jLabelErrorCant.setVisible(false);
                     DefaultTableModel modelo = (DefaultTableModel) this.cv.jTable.getModel();
-                    modelo.addRow(new Object[]{k.getProducto(), k.getEntrada(), "$" + k.getCostoU()});
+                    modelo.addRow(new Object[]{k.getProducto(), k.getEntrada(), "$" + k.getCostoUnitario()});
                     float total = 0;
-                    total = c.getTotal() + (k.getEntrada() * k.getCostoU());
+                    total = c.getTotal() + (k.getEntrada() * k.getCostoUnitario());
                     c.setTotal(total);
                     this.cv.jLabelTotal.setText("Total: $" + total);
                     /*es necesario????????????????????????????????????????
@@ -205,8 +205,8 @@ public class ControlCV implements ActionListener {
                 }*/
 
                     k.setInventario(ik.inventario(k.getProducto()));
-                    k.setCodigoC(c.getCodigo());
-                    k.setCodigoV(null);
+                    k.setCodigoCompra(c.getCodigo());
+                    k.setCodigoVenta(null);
                     k.setInventario(k.getInventario() + k.getEntrada());
                     ik.crear(k);
                     ic.modificar(c);
@@ -332,11 +332,11 @@ public class ControlCV implements ActionListener {
                     this.cv.jLabelTotal.setVisible(true);
                     this.cv.jLabelErrorPrecio.setVisible(false);
                     this.cv.jLabelErrorCant.setVisible(false);
-                    k.setCostoU(Float.parseFloat(this.cv.jTextFieldPrecio.getText()));
+                    k.setCostoUnitario(Float.parseFloat(this.cv.jTextFieldPrecio.getText()));
                     DefaultTableModel modelo = (DefaultTableModel) this.cv.jTable.getModel();
-                    modelo.addRow(new Object[]{k.getProducto(), k.getSalida(), "$ " + k.getCostoU()});
+                    modelo.addRow(new Object[]{k.getProducto(), k.getSalida(), "$ " + k.getCostoUnitario()});
                     float total = 0;
-                    total = v.getTotal() + (k.getSalida() * k.getCostoU());
+                    total = v.getTotal() + (k.getSalida() * k.getCostoUnitario());
                     v.setTotal(total);
                     this.cv.jLabelTotal.setText("Total: $" + total);
                     /*es necesario????????????????????????????????????????
@@ -345,8 +345,8 @@ public class ControlCV implements ActionListener {
                         c.setTotal(c.getTotal()+Float.parseFloat(this.cv.jTable.getValueAt(i, j).toString()));
                     }
                 }*/
-                    k.setCodigoV(v.getCodigo());
-                    k.setCodigoC(null);
+                    k.setCodigoVenta(v.getCodigo());
+                    k.setCodigoCompra(null);
                     k.setInventario(k.getInventario() - Integer.parseInt(this.cv.jSpinnerInv.getValue().toString()));
                     ik.crear(k);
                     iv.modificar(v);

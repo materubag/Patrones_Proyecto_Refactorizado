@@ -107,7 +107,7 @@ public class ProvinciaImpl extends MySQL implements IProvincia {
     }
 
     @Override
-    public void delCiuAdjunta(String codigo) throws Exception {
+    public void borrarCiudadAdjunta(String codigo) throws Exception {
         try {
             super.conectar();
             if (super.verifConexion() == true) {
@@ -126,7 +126,7 @@ public class ProvinciaImpl extends MySQL implements IProvincia {
     }
 
     @Override
-    public boolean provUsada(String cod) throws Exception {
+    public boolean provinciaUsada(String cod) throws Exception {
         boolean verif = false;
         try {
             super.conectar();

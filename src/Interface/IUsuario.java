@@ -14,6 +14,6 @@ import java.util.ArrayList;
 public interface IUsuario {
     public void crear(Usuario u)throws Exception;
     public ArrayList<Usuario> listarTodo()throws Exception;
-    public Usuario verifUser(String nom) throws Exception;
-    public void modEst(String n,String e)throws Exception;
+    public Usuario verificarUsuario(String nom) throws Exception;
+    public void modificarEstado(String n,String e)throws Exception;
 }

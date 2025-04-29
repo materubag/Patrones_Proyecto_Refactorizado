@@ -16,7 +16,7 @@ public interface ICiudad {
     public void modificar(Ciudad c)throws Exception;
     public ArrayList<Ciudad> listarTodo()throws Exception;
     public void borrar(String codigo)throws Exception;
-    public void provAdjunta(Ciudad c)throws Exception;
-    public ArrayList<String> provExistente()throws Exception;
-    public boolean ciuUsada(String cod) throws Exception;
+    public void provinciaAdjunta(Ciudad c)throws Exception;
+    public ArrayList<String> provinciaExistente()throws Exception;
+    public boolean ciudadUsada(String cod) throws Exception;
 }

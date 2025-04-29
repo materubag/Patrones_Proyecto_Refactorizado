@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class POpciones extends javax.swing.JPanel {
+public class PanelOpciones extends javax.swing.JPanel {
 
     /**
      * Creates new form Opciones
      */
-    public POpciones() {
+    public PanelOpciones() {
         initComponents();
         
     }
@@ -50,7 +50,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonClient.setText("Clientes");
         jButtonClient.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonClient.setBorderPainted(false);
-        jButtonClient.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonClient.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonClient.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonClient.setIconTextGap(10);
         jButtonClient.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +66,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonVerFactura.setText("Facturas");
         jButtonVerFactura.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonVerFactura.setBorderPainted(false);
-        jButtonVerFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVerFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonVerFactura.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonVerFactura.setIconTextGap(10);
         jButtonVerFactura.addActionListener(new java.awt.event.ActionListener() {
@@ -82,7 +82,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonProve.setText("Proveedor");
         jButtonProve.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonProve.setBorderPainted(false);
-        jButtonProve.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonProve.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonProve.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonProve.setIconTextGap(10);
         jButtonProve.addActionListener(new java.awt.event.ActionListener() {
@@ -98,7 +98,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonKardex.setText("Kardex");
         jButtonKardex.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonKardex.setBorderPainted(false);
-        jButtonKardex.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonKardex.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonKardex.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonKardex.setIconTextGap(10);
         jButtonKardex.addActionListener(new java.awt.event.ActionListener() {
@@ -114,7 +114,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonCompraV.setText("Compra y Venta");
         jButtonCompraV.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonCompraV.setBorderPainted(false);
-        jButtonCompraV.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCompraV.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCompraV.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonCompraV.setIconTextGap(10);
         jButtonCompraV.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +130,7 @@ public class POpciones extends javax.swing.JPanel {
         jButtonProd.setText("Productos");
         jButtonProd.setBorder(null);
         jButtonProd.setBorderPainted(false);
-        jButtonProd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonProd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonProd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonProd.setIconTextGap(10);
         jButtonProd.addMouseListener(new java.awt.event.MouseAdapter() {

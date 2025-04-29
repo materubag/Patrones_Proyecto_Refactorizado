@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class PProductos extends javax.swing.JPanel {
+public class PanelProductos extends javax.swing.JPanel {
 
     /**
      * Creates new form Productos
      */
-    public PProductos() {
+    public PanelProductos() {
         initComponents();
     }
 
@@ -51,7 +51,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonQR.setText("Generar");
         jButtonQR.setBorder(null);
         jButtonQR.setBorderPainted(false);
-        jButtonQR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonQR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         jLabelNom.setFont(new java.awt.Font("sansserif", 1, 24)); // NOI18N
         jLabelNom.setText("Nombre:");
@@ -62,7 +62,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonAccion.setText("Agregar");
         jButtonAccion.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonAccion.setBorderPainted(false);
-        jButtonAccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAccion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAccion.setHideActionText(true);
         jButtonAccion.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonAccion.setIconTextGap(10);
@@ -93,7 +93,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonEdi.setText("Editar Producto");
         jButtonEdi.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonEdi.setBorderPainted(false);
-        jButtonEdi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEdi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEdi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonEdi.setIconTextGap(10);
         jButtonEdi.addActionListener(new java.awt.event.ActionListener() {
@@ -109,7 +109,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonAdd.setText("Agregar Producto");
         jButtonAdd.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonAdd.setBorderPainted(false);
-        jButtonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAdd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAdd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonAdd.setIconTextGap(10);
         jButtonAdd.addActionListener(new java.awt.event.ActionListener() {
@@ -125,7 +125,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonElimi.setText("Borrar Producto");
         jButtonElimi.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonElimi.setBorderPainted(false);
-        jButtonElimi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonElimi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonElimi.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonElimi.setIconTextGap(10);
         jButtonElimi.addActionListener(new java.awt.event.ActionListener() {
@@ -141,7 +141,7 @@ public class PProductos extends javax.swing.JPanel {
         jButtonGenQR.setText("Generar QR");
         jButtonGenQR.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonGenQR.setBorderPainted(false);
-        jButtonGenQR.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonGenQR.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonGenQR.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonGenQR.setIconTextGap(10);
         jButtonGenQR.addActionListener(new java.awt.event.ActionListener() {

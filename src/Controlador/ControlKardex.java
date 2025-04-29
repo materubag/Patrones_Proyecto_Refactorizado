@@ -8,7 +8,7 @@ import Implementacion.KardexImpl;
 import Interface.IKardex;
 import Modelo.Kardex;
 import Recursos.Codigo;
-import Vista.PKardex;
+import Vista.PanelKardex;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlKardex implements ActionListener {
 
-    PKardex pk = new PKardex();
+    PanelKardex pk = new PanelKardex();
 
-    public ControlKardex(PKardex pk) {
+    public ControlKardex(PanelKardex pk) {
         this.pk = pk;
         this.pk.jComboBoxPd.addActionListener(this);
     }
@@ -42,10 +42,10 @@ public class ControlKardex implements ActionListener {
                     JOptionPane.showMessageDialog(this.pk, "No hay historial del producto");
                 } else {
                     for (int i = 0; i < kl.size(); i++) {
-                        if (kl.get(i).getCodigoC() == null) {
-                            kl.get(i).setCodigoC("Venta: " + kl.get(i).getCodigoV());
+                        if (kl.get(i).getCodigoCompra() == null) {
+                            kl.get(i).setCodigoCompra("Venta: " + kl.get(i).getCodigoVenta());
                         } else {
-                            kl.get(i).setCodigoC("Compra: " + kl.get(i).getCodigoC());
+                            kl.get(i).setCodigoCompra("Compra: " + kl.get(i).getCodigoCompra());
                         }
                         String entrada, salida;
                         if (kl.get(i).getEntrada() == 0) {
@@ -59,8 +59,8 @@ public class ControlKardex implements ActionListener {
                             salida = String.valueOf(kl.get(i).getSalida());
                         }
                         
-                        modelo.addRow(new Object[]{kl.get(i).getCodigo(), kl.get(i).getFecha(), kl.get(i).getCodigoC(),
-                            "$ " + kl.get(i).getCostoU(), entrada, salida, kl.get(i).getInventario()});
+                        modelo.addRow(new Object[]{kl.get(i).getCodigo(), kl.get(i).getFecha(), kl.get(i).getCodigoCompra(),
+                            "$ " + kl.get(i).getCostoUnitario(), entrada, salida, kl.get(i).getInventario()});
                     }
                 }
             } catch (Exception ex) {

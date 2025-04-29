@@ -54,7 +54,7 @@ public class ControlCiu implements ActionListener {
                 Ciudad c = new Ciudad();
                 ControlDatos cdt = new ControlDatos();
                 c.setNombre(this.pciu.jTextFieldNom.getText().trim());
-                c.setCodigoProv(cd.getCode(this.pciu.jComboBoxP.getSelectedItem().toString()));
+                c.setCodigoProvincia(cd.getCode(this.pciu.jComboBoxP.getSelectedItem().toString()));
                 if (c.getNombre().length() <= 49 && !cdt.numeros(c.getNombre())
                         && !this.pciu.jComboBoxP.getSelectedItem().toString().equals("Provincias")
                         && !this.pciu.jTextFieldNom.getText().equals("")) {
@@ -67,7 +67,7 @@ public class ControlCiu implements ActionListener {
                     ArrayList<Ciudad> clist = iciu.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
                         modelo.addRow(new Object[]{clist.get(i).getCodigo(), clist.get(i).getNombre(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getNombreProv()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getNombreProvincia()});
                         this.pciu.jComboBoxC.addItem(clist.get(i).getCodigo() + ": " + clist.get(i).getNombre());
                     }
                 } else {
@@ -108,7 +108,7 @@ public class ControlCiu implements ActionListener {
                 ControlDatos cdt = new ControlDatos();
                 c.setCodigo(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()));
                 c.setNombre(this.pciu.jTextFieldNom.getText().trim());
-                c.setCodigoProv(cd.getCode(this.pciu.jComboBoxP.getSelectedItem().toString()));
+                c.setCodigoProvincia(cd.getCode(this.pciu.jComboBoxP.getSelectedItem().toString()));
                 if (!this.pciu.jComboBoxC.getSelectedItem().toString().equals("Ciudades")
                         && c.getNombre().length() <= 49 && !cdt.numeros(c.getNombre())
                         && !this.pciu.jComboBoxP.getSelectedItem().toString().equals("Provincias")
@@ -122,9 +122,9 @@ public class ControlCiu implements ActionListener {
                     ArrayList<Ciudad> clist = iciu.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
                         modelo.addRow(new Object[]{clist.get(i).getCodigo(), clist.get(i).getNombre(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getNombreProv()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getNombreProvincia()});
                         this.pciu.jComboBoxC.addItem(clist.get(i).getCodigo() + ": " + clist.get(i).getNombre());
-                        this.pciu.jComboBoxP.addItem(clist.get(i).getCodigoProv() + ": " + clist.get(i).getNombreProv());
+                        this.pciu.jComboBoxP.addItem(clist.get(i).getCodigoProvincia() + ": " + clist.get(i).getNombreProvincia());
                     }
                 } else {
                     if (this.pciu.jComboBoxC.getItemCount() == 1) {
@@ -160,7 +160,7 @@ public class ControlCiu implements ActionListener {
                 Codigo cd = new Codigo();
                 ICiudad iciu = new CiudadImpl();
                 if (!this.pciu.jComboBoxC.getSelectedItem().toString().equals("Ciudades")
-                        && !iciu.ciuUsada(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()))) {
+                        && !iciu.ciudadUsada(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()))) {
 
                     iciu.borrar(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()));
                     DefaultTableModel modelo = (DefaultTableModel) this.pciu.jTableC.getModel();
@@ -170,14 +170,14 @@ public class ControlCiu implements ActionListener {
                     ArrayList<Ciudad> clist = iciu.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
                         modelo.addRow(new Object[]{clist.get(i).getCodigo(), clist.get(i).getNombre(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getNombreProv()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getNombreProvincia()});
                         this.pciu.jComboBoxC.addItem(clist.get(i).getCodigo() + ": " + clist.get(i).getNombre());
                     }
                 } else {
                     if (this.pciu.jComboBoxC.getItemCount() == 1) {
                         JOptionPane.showMessageDialog(this.pciu, "No ha ingresado ciudades");
                     }
-                    if (iciu.ciuUsada(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()))) {
+                    if (iciu.ciudadUsada(cd.getCode(this.pciu.jComboBoxC.getSelectedItem().toString()))) {
                         JOptionPane.showMessageDialog(this.pciu, "No se puede borrar\n Pertenece a un cliente o proveedor");
                     }
                 }

@@ -21,26 +21,26 @@ public class Principal {
             System.err.println("Failed to initialize LaF");
         }
         
-        frmMenu m = new frmMenu();
-        POpciones op = new POpciones();
-        PLogin lg = new PLogin();
-        PCliente pcl= new PCliente();
+        FormMenu m = new FormMenu();
+        PanelOpciones op = new PanelOpciones();
+        PanelLogin lg = new PanelLogin();
+        PanelCliente pcl= new PanelCliente();
         ControlCliente ccl = new ControlCliente(pcl);
-        Pproveedor pve = new Pproveedor();
+        Panelproveedor pve = new Panelproveedor();
         ControlProveedor cpve = new ControlProveedor(pve);
-        PProductos ppd = new PProductos();
+        PanelProductos ppd = new PanelProductos();
         ControlProducto cpd = new ControlProducto(ppd);
         PanelCiudad pciu=new PanelCiudad();
         ControlCiu cc = new ControlCiu(pciu);
         PanelProvincia pprov = new PanelProvincia();
         ControlProvin cpv = new ControlProvin(pprov);
-        PCompraV cv = new PCompraV();
+        PanelCompraVenta cv = new PanelCompraVenta();
         ControlCV ccv = new ControlCV(cv);
-        PKardex pk = new PKardex();
+        PanelKardex pk = new PanelKardex();
         ControlKardex ck = new ControlKardex(pk);
-        PFacturas ft = new PFacturas();
+        PanelFacturas ft = new PanelFacturas();
         ControlFact cf = new ControlFact(ft);
-        PUsuario pu = new PUsuario();
+        PanelUsuario pu = new PanelUsuario();
         ControlUs cus = new ControlUs(pu);
         Control ct = new Control(m,pciu,op,lg,pprov,pcl,pve,ppd,cv,pk,ft,pu);
         

@@ -131,10 +131,10 @@ public class ControlProvin implements ActionListener {
                 Codigo cd = new Codigo();
                 if (this.pprov.jComboBoxP.getItemCount() == 1) {
                     JOptionPane.showMessageDialog(this.pprov, "No  existen provincias");
-                } else if (!iprov.provUsada(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()))
+                } else if (!iprov.provinciaUsada(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()))
                         && !this.pprov.jComboBoxP.getSelectedItem().toString().equals("Provincias")) {
                     iprov.borrar(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()));
-                    iprov.delCiuAdjunta(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()));
+                    iprov.borrarCiudadAdjunta(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()));
                     DefaultTableModel modelo = (DefaultTableModel) this.pprov.jTable1.getModel();
                     modelo.setRowCount(0);
                     this.pprov.jComboBoxP.removeAllItems();
@@ -144,7 +144,7 @@ public class ControlProvin implements ActionListener {
                         modelo.addRow(new Object[]{plist.get(i).getCodigo(), plist.get(i).getNombre()});
                         this.pprov.jComboBoxP.addItem(plist.get(i).getCodigo() + ": " + plist.get(i).getNombre());
                     }
-                } else if (iprov.provUsada(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()))) {
+                } else if (iprov.provinciaUsada(cd.getCode(this.pprov.jComboBoxP.getSelectedItem().toString()))) {
                     JOptionPane.showMessageDialog(null, "No se puede borrar\nPertenece a un cliente o proveedor");
                 }
             } catch (Exception ex) {

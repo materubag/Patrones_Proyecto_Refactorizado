@@ -11,7 +11,7 @@ import Interface.IVenta;
 import Modelo.Compra;
 import Modelo.Kardex;
 import Modelo.Venta;
-import Vista.PFacturas;
+import Vista.PanelFacturas;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -24,9 +24,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlFact implements ActionListener {
 
-    PFacturas ft = new PFacturas();
+    PanelFacturas ft = new PanelFacturas();
 
-    public ControlFact(PFacturas ft) {
+    public ControlFact(PanelFacturas ft) {
         this.ft = ft;
         this.ft.jButtonCompra.addActionListener(this);
         this.ft.jButtonVenta.addActionListener(this);

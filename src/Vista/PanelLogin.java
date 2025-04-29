@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class PLogin extends javax.swing.JPanel {
+public class PanelLogin extends javax.swing.JPanel {
 
     /**
      * Creates new form Login
      */
-    public PLogin() {
+    public PanelLogin() {
         initComponents();
     }
     private boolean cambio=false;
@@ -68,7 +68,7 @@ public class PLogin extends javax.swing.JPanel {
         jButtonLogin.setText("                  Login");
         jButtonLogin.setBorder(null);
         jButtonLogin.setBorderPainted(false);
-        jButtonLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonLogin.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonLogin.setHorizontalAlignment(javax.swing.SwingConstants.LEADING);
         jButtonLogin.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonLogin.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +81,7 @@ public class PLogin extends javax.swing.JPanel {
         jTextFieldNom.setBackground(new java.awt.Color(33, 33, 33));
         jTextFieldNom.setText("Ingrese su nombre de usuario");
         jTextFieldNom.setBorder(null);
-        jTextFieldNom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldNom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextFieldNom.setOpaque(true);
         jTextFieldNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class PKardex extends javax.swing.JPanel {
+public class PanelKardex extends javax.swing.JPanel {
 
     /**
      * Creates new form PKardex
      */
-    public PKardex() {
+    public PanelKardex() {
         initComponents();
     }
 

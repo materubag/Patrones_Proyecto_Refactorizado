@@ -37,21 +37,21 @@ import javax.swing.table.DefaultTableModel;
 public class Control implements ActionListener {
 
     private String permisos;
-    frmMenu m = new frmMenu();
-    POpciones op = new POpciones();
-    PLogin lg = new PLogin();
+    FormMenu m = new FormMenu();
+    PanelOpciones op = new PanelOpciones();
+    PanelLogin lg = new PanelLogin();
     PanelProvincia pprov = new PanelProvincia();
     PanelCiudad pciu = new PanelCiudad();
-    PCliente pcl = new PCliente();
-    Pproveedor ppee = new Pproveedor();
-    PProductos ppd = new PProductos();
-    PCompraV cv = new PCompraV();
-    PKardex pk = new PKardex();
-    PFacturas ft = new PFacturas();
-    PUsuario pu = new PUsuario();
+    PanelCliente pcl = new PanelCliente();
+    Panelproveedor ppee = new Panelproveedor();
+    PanelProductos ppd = new PanelProductos();
+    PanelCompraVenta cv = new PanelCompraVenta();
+    PanelKardex pk = new PanelKardex();
+    PanelFacturas ft = new PanelFacturas();
+    PanelUsuario pu = new PanelUsuario();
 
-    public Control(frmMenu m, PanelCiudad pciu, POpciones op, PLogin lg, PanelProvincia pprov,
-            PCliente pcl, Pproveedor pve, PProductos ppd, PCompraV cv, PKardex pk, PFacturas ft, PUsuario pu) {
+    public Control(FormMenu m, PanelCiudad pciu, PanelOpciones op, PanelLogin lg, PanelProvincia pprov,
+            PanelCliente pcl, Panelproveedor pve, PanelProductos ppd, PanelCompraVenta cv, PanelKardex pk, PanelFacturas ft, PanelUsuario pu) {
         this.lg = lg;
         this.m = m;
         this.op = op;
@@ -121,7 +121,7 @@ public class Control implements ActionListener {
                 Encriptar enc = new Encriptar();
                 u.setNombre(this.lg.jTextFieldNom.getText().trim());
                 //u.setClave(enc.encriptar(this.lg.jPasswordField1.getText().trim()));
-                u = ui.verifUser(u.getNombre());
+                u = ui.verificarUsuario(u.getNombre());
                 this.lg.jTextFieldNom.getKeyListeners();
                 boolean c = this.lg.isCambio();
                 if (c == true) {
@@ -153,7 +153,7 @@ public class Control implements ActionListener {
                         JOptionPane.showMessageDialog(this.lg, "Usuario bloqueado");
                     } else if (this.cont == 2) {
                         IUsuario ui2 = new UserImpl();
-                        ui2.modEst(u.getNombre(), "bloqueado");
+                        ui2.modificarEstado(u.getNombre(), "bloqueado");
                         JOptionPane.showMessageDialog(this.lg, "Su usuario ha sido bloqueado");
                     } else {
                         this.cont++;
@@ -295,15 +295,15 @@ public class Control implements ActionListener {
                 CiudadImpl ci = new CiudadImpl();
                 ProvinciaImpl pi = new ProvinciaImpl();
                 for (int i = 0; i < pveL.size(); i++) {
-                    pveL.get(i).setCodigoCiu(pveL.get(i).getCodigoCiu() + ": " + ci.nombre(pveL.get(i).getCodigoCiu()));
-                    pveL.get(i).setCodigoProv(pveL.get(i).getCodigoProv() + ": " + pi.nombre(pveL.get(i).getCodigoProv()));
+                    pveL.get(i).setCodigoCiudad(pveL.get(i).getCodigoCiudad() + ": " + ci.nombre(pveL.get(i).getCodigoCiudad()));
+                    pveL.get(i).setCodigoProvincia(pveL.get(i).getCodigoProvincia() + ": " + pi.nombre(pveL.get(i).getCodigoProvincia()));
                     modelo.addRow(new Object[]{pveL.get(i).getRuc(), pveL.get(i).getNombre(), pveL.get(i).getDireccion(),
-                        pveL.get(i).getTelefono(), pveL.get(i).getCodigoProv(), pveL.get(i).getCodigoCiu()});
+                        pveL.get(i).getTelefono(), pveL.get(i).getCodigoProvincia(), pveL.get(i).getCodigoCiudad()});
                     this.ppee.jComboBoxRuc.addItem(pveL.get(i).getRuc());
                 }
                 this.ppee.jComboBoxProv.removeAllItems();
                 ICiudad iciu = new CiudadImpl();
-                ArrayList<String> cl = iciu.provExistente();
+                ArrayList<String> cl = iciu.provinciaExistente();
                 if (cl.isEmpty() && this.getPermisos().substring(0, 1).equals("1")) {
                     String Jop[] = {"Aceptar", "Cancalar"};
                     int a = JOptionPane.showOptionDialog(this.ppd, "No se ha ingresado provincias\n¿Desea ingresar uno?", "",
@@ -356,15 +356,15 @@ public class Control implements ActionListener {
                 ProvinciaImpl pi = new ProvinciaImpl();
                 ArrayList<Cliente> clist = icl.listarTodo();
                 for (int i = 0; i < clist.size(); i++) {
-                    clist.get(i).setCodigoCiu(clist.get(i).getCodigoCiu() + ": " + ci.nombre(clist.get(i).getCodigoCiu()));
-                    clist.get(i).setCodigoProv(clist.get(i).getCodigoProv() + ": " + pi.nombre(clist.get(i).getCodigoProv()));
+                    clist.get(i).setCodigoCiudad(clist.get(i).getCodigoCiudad() + ": " + ci.nombre(clist.get(i).getCodigoCiudad()));
+                    clist.get(i).setCodigoProvincia(clist.get(i).getCodigoProvincia() + ": " + pi.nombre(clist.get(i).getCodigoProvincia()));
                     modelo.addRow(new Object[]{clist.get(i).getCedula(), clist.get(i).getNombre(), clist.get(i).getDireccion(),
-                        clist.get(i).getCodigoProv(), clist.get(i).getCodigoCiu()});
+                        clist.get(i).getCodigoProvincia(), clist.get(i).getCodigoCiudad()});
                     this.pcl.jComboBoxCed.addItem(clist.get(i).getCedula());
                 }
                 ICiudad iciu = new CiudadImpl();
                 this.pcl.jComboBoxProv.removeAllItems();
-                ArrayList<String> clis = iciu.provExistente();
+                ArrayList<String> clis = iciu.provinciaExistente();
                 if (clis.isEmpty() && this.getPermisos().substring(0, 1).equals("1")) {
                     String Jop[] = {"Aceptar", "Cancalar"};
                     int a = JOptionPane.showOptionDialog(this.ppd, "No se ha ingresado provincias\n¿Desea ingresar uno?",
@@ -442,10 +442,10 @@ public class Control implements ActionListener {
                 ArrayList<Ciudad> clist = iciu.listarTodo();
                 for (int i = 0; i < clist.size(); i++) {
                     modelo.addRow(new Object[]{clist.get(i).getCodigo(), clist.get(i).getNombre(),
-                        clist.get(i).getCodigoProv(), clist.get(i).getNombreProv()});
+                        clist.get(i).getCodigoProvincia(), clist.get(i).getNombreProvincia()});
                     this.pciu.jComboBoxC.addItem(clist.get(i).getCodigo() + ": " + clist.get(i).getNombre());
                 }
-                ArrayList<String> pl = iciu.provExistente();
+                ArrayList<String> pl = iciu.provinciaExistente();
                 if (pl.isEmpty() && this.getPermisos().substring(0, 1).equals("1")) {
                     String Jop[] = {"Aceptar", "Cancalar"};
                     int a = JOptionPane.showOptionDialog(this.ppd, "No se ha ingresado provincias\n¿Desea ingresar uno?",

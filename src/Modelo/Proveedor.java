@@ -13,8 +13,8 @@ public class Proveedor {
     private String nombre;
     private String direccion;
     private String telefono;
-    private String codigoProv;
-    private String codigoCiu;
+    private String codigoProvincia;
+    private String codigoCiudad;
 
     public String getRuc() {
         return this.ruc;
@@ -48,20 +48,20 @@ public class Proveedor {
         this.telefono = telefono;
     }
 
-    public String getCodigoProv() {
-        return this.codigoProv;
+    public String getCodigoProvincia() {
+        return this.codigoProvincia;
     }
 
-    public void setCodigoProv(String codigoProv) {
-        this.codigoProv = codigoProv;
+    public void setCodigoProvincia(String codigoProvincia) {
+        this.codigoProvincia = codigoProvincia;
     }
 
-    public String getCodigoCiu() {
-        return this.codigoCiu;
+    public String getCodigoCiudad() {
+        return this.codigoCiudad;
     }
 
-    public void setCodigoCiu(String codigoCiu) {
-        this.codigoCiu = codigoCiu;
+    public void setCodigoCiudad(String codigoCiudad) {
+        this.codigoCiudad = codigoCiudad;
     }
 
     

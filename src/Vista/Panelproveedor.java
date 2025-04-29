@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class Pproveedor extends javax.swing.JPanel {
+public class Panelproveedor extends javax.swing.JPanel {
 
     /**
      * Creates new form Pproveedor
      */
-    public Pproveedor() {
+    public Panelproveedor() {
         initComponents();
             
     }
@@ -94,7 +94,7 @@ public class Pproveedor extends javax.swing.JPanel {
         jButtonAd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zIMG/icons8-añadir-24.png"))); // NOI18N
         jButtonAd.setText("Agregar Proveedor");
         jButtonAd.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
-        jButtonAd.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonAd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonAd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonAd.setIconTextGap(10);
         jButtonAd.addActionListener(new java.awt.event.ActionListener() {
@@ -112,7 +112,7 @@ public class Pproveedor extends javax.swing.JPanel {
         jButtonEdit.setText("Editar Proveedor");
         jButtonEdit.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonEdit.setBorderPainted(false);
-        jButtonEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonEdit.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonEdit.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonEdit.setIconTextGap(10);
         jButtonEdit.addActionListener(new java.awt.event.ActionListener() {
@@ -130,7 +130,7 @@ public class Pproveedor extends javax.swing.JPanel {
         jButtonElim.setText("Borrar Proovedor");
         jButtonElim.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonElim.setBorderPainted(false);
-        jButtonElim.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonElim.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonElim.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonElim.setIconTextGap(10);
         jButtonElim.addActionListener(new java.awt.event.ActionListener() {
@@ -189,7 +189,7 @@ public class Pproveedor extends javax.swing.JPanel {
         ButtonAccion.setForeground(new java.awt.Color(255, 255, 255));
         ButtonAccion.setText("Accion");
         ButtonAccion.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        ButtonAccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        ButtonAccion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ButtonAccion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ButtonAccionActionPerformed(evt);

@@ -1,5 +1,7 @@
 package Gestor;
 
+import Interface.IGestorBD;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Project/Maven2/JavaApp/src/main/java/${packagePath}/${mainClassName}.java to edit this template
@@ -9,7 +11,7 @@ package Gestor;
  *
  * @author mateo
  */
-public class GestorBD {
+public abstract class GestorBD implements IGestorBD {
     private String user;
     private String clave;
 
@@ -28,10 +30,6 @@ public class GestorBD {
     public void setClave(String clave) {
         this.clave = clave;
     }
-    public void insertar(){
-        
-    }
-    public void conectar(){
-        
-    }
+
+    public abstract void conectar();
 }

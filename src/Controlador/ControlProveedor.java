@@ -14,7 +14,7 @@ import Modelo.Proveedor;
 import Recursos.Codigo;
 import Recursos.ControlDatos;
 import Recursos.Ruc;
-import Vista.Pproveedor;
+import Vista.Panelproveedor;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -27,9 +27,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlProveedor implements ActionListener {
 
-    Pproveedor pve = new Pproveedor();
+    Panelproveedor pve = new Panelproveedor();
 
-    public ControlProveedor(Pproveedor pve) {
+    public ControlProveedor(Panelproveedor pve) {
         this.pve = pve;
         this.pve.ButtonAccion.addActionListener(this);
         this.pve.jButtonAd.addActionListener(this);
@@ -90,8 +90,8 @@ public class ControlProveedor implements ActionListener {
                 pe.setNombre(this.pve.jTextFieldNom.getText().trim());
                 pe.setDireccion(this.pve.jTextFieldDirec.getText().trim());
                 pe.setTelefono(this.pve.jTextFieldTl.getText().trim());
-                pe.setCodigoCiu(cod.getCode(this.pve.jComboBoxCiu.getSelectedItem().toString()));
-                pe.setCodigoProv(cod.getCode(this.pve.jComboBoxProv.getSelectedItem().toString()));
+                pe.setCodigoCiudad(cod.getCode(this.pve.jComboBoxCiu.getSelectedItem().toString()));
+                pe.setCodigoProvincia(cod.getCode(this.pve.jComboBoxProv.getSelectedItem().toString()));
                 IProveedor pvimpl = new ProveedorImpl();
                 if (!pvimpl.existe(pe.getRuc()) && vruc.validar(pe.getRuc()) && d.dosP(pe.getNombre())
                         && d.dosP(pe.getDireccion()) && d.numeros(pe.getTelefono())
@@ -119,10 +119,10 @@ public class ControlProveedor implements ActionListener {
                     ProvinciaImpl pi = new ProvinciaImpl();
 
                     for (int i = 0; i < pveL.size(); i++) {
-                        pveL.get(i).setCodigoCiu(pveL.get(i).getCodigoCiu() + ": " + ci.nombre(pveL.get(i).getCodigoCiu()));
-                        pveL.get(i).setCodigoProv(pveL.get(i).getCodigoProv() + ": " + pi.nombre(pveL.get(i).getCodigoProv()));
+                        pveL.get(i).setCodigoCiudad(pveL.get(i).getCodigoCiudad() + ": " + ci.nombre(pveL.get(i).getCodigoCiudad()));
+                        pveL.get(i).setCodigoProvincia(pveL.get(i).getCodigoProvincia() + ": " + pi.nombre(pveL.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{pveL.get(i).getRuc(), pveL.get(i).getNombre(), pveL.get(i).getDireccion(),
-                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProv(), pveL.get(i).getCodigoCiu()});
+                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProvincia(), pveL.get(i).getCodigoCiudad()});
                         this.pve.jComboBoxRuc.addItem(pveL.get(i).getRuc());
                     }
                 } else {
@@ -185,8 +185,8 @@ public class ControlProveedor implements ActionListener {
                 pe.setNombre(this.pve.jTextFieldNom.getText().trim());
                 pe.setDireccion(this.pve.jTextFieldDirec.getText());
                 pe.setTelefono(this.pve.jTextFieldTl.getText().trim());
-                pe.setCodigoCiu(cod.getCode(this.pve.jComboBoxCiu.getSelectedItem().toString()));
-                pe.setCodigoProv(cod.getCode(this.pve.jComboBoxProv.getSelectedItem().toString()));
+                pe.setCodigoCiudad(cod.getCode(this.pve.jComboBoxCiu.getSelectedItem().toString()));
+                pe.setCodigoProvincia(cod.getCode(this.pve.jComboBoxProv.getSelectedItem().toString()));
                 if (d.dosP(pe.getNombre()) && d.dosP(pe.getDireccion()) && d.numeros(pe.getTelefono())
                         && pe.getNombre().length() <= 49 && pe.getDireccion().length() <= 49
                         && this.pve.jComboBoxRuc.getItemCount() != 1 && !pe.getRuc().equals("Proveedores")) {
@@ -208,10 +208,10 @@ public class ControlProveedor implements ActionListener {
                     CiudadImpl ci = new CiudadImpl();
                     ProvinciaImpl pi = new ProvinciaImpl();
                     for (int i = 0; i < pveL.size(); i++) {
-                        pveL.get(i).setCodigoCiu(pveL.get(i).getCodigoCiu() + ": " + ci.nombre(pveL.get(i).getCodigoCiu()));
-                        pveL.get(i).setCodigoProv(pveL.get(i).getCodigoProv() + ": " + pi.nombre(pveL.get(i).getCodigoProv()));
+                        pveL.get(i).setCodigoCiudad(pveL.get(i).getCodigoCiudad() + ": " + ci.nombre(pveL.get(i).getCodigoCiudad()));
+                        pveL.get(i).setCodigoProvincia(pveL.get(i).getCodigoProvincia() + ": " + pi.nombre(pveL.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{pveL.get(i).getRuc(), pveL.get(i).getNombre(), pveL.get(i).getDireccion(),
-                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProv(), pveL.get(i).getCodigoCiu()});
+                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProvincia(), pveL.get(i).getCodigoCiudad()});
                         this.pve.jComboBoxRuc.addItem(pveL.get(i).getRuc());
                     }
                 } else {
@@ -292,10 +292,10 @@ public class ControlProveedor implements ActionListener {
                     CiudadImpl ci = new CiudadImpl();
                     ProvinciaImpl pi = new ProvinciaImpl();
                     for (int i = 0; i < pveL.size(); i++) {
-                        pveL.get(i).setCodigoCiu(pveL.get(i).getCodigoCiu() + ": " + ci.nombre(pveL.get(i).getCodigoCiu()));
-                        pveL.get(i).setCodigoProv(pveL.get(i).getCodigoProv() + ": " + pi.nombre(pveL.get(i).getCodigoProv()));
+                        pveL.get(i).setCodigoCiudad(pveL.get(i).getCodigoCiudad() + ": " + ci.nombre(pveL.get(i).getCodigoCiudad()));
+                        pveL.get(i).setCodigoProvincia(pveL.get(i).getCodigoProvincia() + ": " + pi.nombre(pveL.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{pveL.get(i).getRuc(), pveL.get(i).getNombre(), pveL.get(i).getDireccion(),
-                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProv(), pveL.get(i).getCodigoCiu()});
+                            pveL.get(i).getTelefono(), pveL.get(i).getCodigoProvincia(), pveL.get(i).getCodigoCiudad()});
                         this.pve.jComboBoxRuc.addItem(pveL.get(i).getRuc());
                         this.pve.jComboBoxCiu.addItem(pveL.get(i).getRuc());
                     }

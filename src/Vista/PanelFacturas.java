@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class PFacturas extends javax.swing.JPanel {
+public class PanelFacturas extends javax.swing.JPanel {
 
     /**
      * Creates new form Facturas
      */
-    public PFacturas() {
+    public PanelFacturas() {
         initComponents();
     }
 
@@ -80,7 +80,7 @@ public class PFacturas extends javax.swing.JPanel {
         jButtonVenta.setText("Factura de Venta");
         jButtonVenta.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonVenta.setBorderPainted(false);
-        jButtonVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonVenta.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonVenta.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonVenta.setIconTextGap(10);
         jButtonVenta.addActionListener(new java.awt.event.ActionListener() {
@@ -96,7 +96,7 @@ public class PFacturas extends javax.swing.JPanel {
         jButtonCompra.setText("Factura de Compra");
         jButtonCompra.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonCompra.setBorderPainted(false);
-        jButtonCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCompra.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCompra.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jButtonCompra.setIconTextGap(10);
         jButtonCompra.addActionListener(new java.awt.event.ActionListener() {
@@ -136,7 +136,7 @@ public class PFacturas extends javax.swing.JPanel {
         jButtonBorrar.setText("Borrar");
         jButtonBorrar.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 10, 1, 1, new java.awt.Color(0, 0, 0)));
         jButtonBorrar.setBorderPainted(false);
-        jButtonBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonBorrar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonBorrar.setIconTextGap(10);
         jButtonBorrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

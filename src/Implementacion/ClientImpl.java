@@ -26,8 +26,8 @@ public class ClientImpl extends MySQL implements ICliente {
                 ps.setString(1, cl.getCedula());
                 ps.setString(2, cl.getNombre());
                 ps.setString(3, cl.getDireccion());
-                ps.setString(4, cl.getCodigoProv());
-                ps.setString(5, cl.getCodigoCiu());
+                ps.setString(4, cl.getCodigoProvincia());
+                ps.setString(5, cl.getCodigoCiudad());
                 ps.executeUpdate();
                 ps.close();
             } else {
@@ -48,8 +48,8 @@ public class ClientImpl extends MySQL implements ICliente {
                 PreparedStatement ps = super.con.prepareStatement("update cliente set nombre=?,direccion=?,codigoProv=?,codigoCiu=? where cedula =?;");
                 ps.setString(1, cl.getNombre());
                 ps.setString(2, cl.getDireccion());
-                ps.setString(3, cl.getCodigoProv());
-                ps.setString(4, cl.getCodigoCiu());
+                ps.setString(3, cl.getCodigoProvincia());
+                ps.setString(4, cl.getCodigoCiudad());
                 ps.setString(5, cl.getCedula());
                 ps.executeUpdate();
                 ps.close();
@@ -76,8 +76,8 @@ public class ClientImpl extends MySQL implements ICliente {
                     cl.setCedula(rs.getString("cedula"));
                     cl.setNombre(rs.getString("nombre"));
                     cl.setDireccion(rs.getString("direccion"));
-                    cl.setCodigoProv(rs.getString("codigoProv"));
-                    cl.setCodigoCiu(rs.getString("codigoCiu"));
+                    cl.setCodigoProvincia(rs.getString("codigoProv"));
+                    cl.setCodigoCiudad(rs.getString("codigoCiu"));
                     clist.add(cl);
                 }
                 rs.close();

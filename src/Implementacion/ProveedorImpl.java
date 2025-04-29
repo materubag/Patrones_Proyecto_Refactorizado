@@ -27,8 +27,8 @@ public class ProveedorImpl extends MySQL implements IProveedor {
                 ps.setString(2, pr.getNombre());
                 ps.setString(3, pr.getDireccion());
                 ps.setString(4, pr.getTelefono());
-                ps.setString(5, pr.getCodigoProv());
-                ps.setString(6, pr.getCodigoCiu());
+                ps.setString(5, pr.getCodigoProvincia());
+                ps.setString(6, pr.getCodigoCiudad());
                 ps.executeUpdate();
                 ps.close();
             } else {
@@ -50,8 +50,8 @@ public class ProveedorImpl extends MySQL implements IProveedor {
                 ps.setString(1, pr.getNombre());
                 ps.setString(2, pr.getDireccion());
                 ps.setString(3, pr.getTelefono());
-                ps.setString(4, pr.getCodigoProv());
-                ps.setString(5, pr.getCodigoCiu());
+                ps.setString(4, pr.getCodigoProvincia());
+                ps.setString(5, pr.getCodigoCiudad());
                 ps.setString(6, pr.getRuc());
                 ps.executeUpdate();
                 ps.close();
@@ -79,8 +79,8 @@ public class ProveedorImpl extends MySQL implements IProveedor {
                     pr.setNombre(rs.getString("nombre"));
                     pr.setDireccion(rs.getString("direccion"));
                     pr.setTelefono(rs.getString("telefono"));
-                    pr.setCodigoProv(rs.getString("codigoProv"));
-                    pr.setCodigoCiu(rs.getString("codigoCiu"));
+                    pr.setCodigoProvincia(rs.getString("codigoProv"));
+                    pr.setCodigoCiudad(rs.getString("codigoCiu"));
                     prlist.add(pr);
                 }
                 rs.close();

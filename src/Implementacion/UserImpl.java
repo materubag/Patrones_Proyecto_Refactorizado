@@ -70,7 +70,7 @@ public class UserImpl extends MySQL implements IUsuario {
         return ulist;
     }
 
-    public Usuario verifUser(String nom) throws Exception {
+    public Usuario verificarUsuario(String nom) throws Exception {
         Usuario u = new Usuario();
         try {
             super.conectar();
@@ -100,7 +100,7 @@ public class UserImpl extends MySQL implements IUsuario {
     }
 
     @Override
-    public void modEst(String n,String e) throws Exception {
+    public void modificarEstado(String n,String e) throws Exception {
         try {
             super.conectar();
             if (super.verifConexion() == true) {

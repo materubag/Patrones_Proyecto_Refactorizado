@@ -12,15 +12,16 @@ import javax.swing.UIManager;
  *
  * @author mateo
  */
-public class PCompraV extends javax.swing.JPanel {
+public class PanelCompraVenta extends javax.swing.JPanel {
 
     /**
      * Creates new form PSale
      */
-    public PCompraV() {
+    public PanelCompraVenta() {
         initComponents();
     }
 
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

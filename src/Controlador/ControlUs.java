@@ -9,7 +9,7 @@ import Interface.IUsuario;
 import Modelo.Usuario;
 import Recursos.Encriptar;
 import Recursos.Permisos;
-import Vista.PUsuario;
+import Vista.PanelUsuario;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -21,9 +21,9 @@ import javax.swing.JOptionPane;
  */
 public class ControlUs implements ActionListener {
 
-    PUsuario pu = new PUsuario();
+    PanelUsuario pu = new PanelUsuario();
 
-    public ControlUs(PUsuario pu) {
+    public ControlUs(PanelUsuario pu) {
         this.pu = pu;
         this.pu.jButtonCrear.addActionListener(this);
     }
@@ -40,7 +40,7 @@ public class ControlUs implements ActionListener {
                 Encriptar enc = new Encriptar();
                 us.setNombre(this.pu.jTextFieldNom.getText());
                 us.setEstado("activo");
-                us.setVerif(iu.verifUser(us.getNombre()).isVerif());
+                us.setVerif(iu.verificarUsuario(us.getNombre()).isVerif());
                 if (this.pu.jPasswordFieldClave.getText().equals(this.pu.jPasswordFieldCopia.getText())
                         && !us.isVerif() && this.pu.jPasswordFieldClave.getText().trim().length() <= 30
                         && (this.pu.jCheckBoxCV.isSelected() || this.pu.jCheckBoxCiu.isSelected()

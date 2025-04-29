@@ -16,6 +16,6 @@ public interface IProvincia {
     public void modificar(Provincia p)throws Exception;
     public ArrayList<Provincia> listarTodo()throws Exception;
     public void borrar(String codigo)throws Exception;
-    public void delCiuAdjunta(String codigo)throws Exception;
-    public boolean provUsada(String cod) throws Exception;
+    public void borrarCiudadAdjunta(String codigo)throws Exception;
+    public boolean provinciaUsada(String cod) throws Exception;
 }

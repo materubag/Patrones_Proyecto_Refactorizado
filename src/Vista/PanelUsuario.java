@@ -8,12 +8,12 @@ package Vista;
  *
  * @author mateo
  */
-public class PUsuario extends javax.swing.JPanel {
+public class PanelUsuario extends javax.swing.JPanel {
 
     /**
      * Creates new form PUsuario
      */
-    public PUsuario() {
+    public PanelUsuario() {
         initComponents();
     }
 
@@ -69,7 +69,7 @@ public class PUsuario extends javax.swing.JPanel {
         jButtonCrear.setText("Registrar");
         jButtonCrear.setBorder(null);
         jButtonCrear.setBorderPainted(false);
-        jButtonCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButtonCrear.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButtonCrear.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonCrearActionPerformed(evt);
@@ -79,7 +79,7 @@ public class PUsuario extends javax.swing.JPanel {
         jTextFieldNom.setBackground(new java.awt.Color(33, 33, 33));
         jTextFieldNom.setText("Ingrese su nombre de usuario");
         jTextFieldNom.setBorder(null);
-        jTextFieldNom.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldNom.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jTextFieldNom.setOpaque(true);
         jTextFieldNom.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

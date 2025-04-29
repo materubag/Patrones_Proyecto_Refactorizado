@@ -12,7 +12,7 @@ import Modelo.Cliente;
 import Recursos.Cedula;
 import Recursos.Codigo;
 import Recursos.ControlDatos;
-import Vista.PCliente;
+import Vista.PanelCliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -25,9 +25,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlCliente implements ActionListener {
 
-    PCliente pcl = new PCliente();
+    PanelCliente pcl = new PanelCliente();
 
-    public ControlCliente(PCliente pcl) {
+    public ControlCliente(PanelCliente pcl) {
         this.pcl = pcl;
         this.pcl.ButtonAccion.addActionListener(this);
         this.pcl.jButtonAd.addActionListener(this);
@@ -89,8 +89,8 @@ public class ControlCliente implements ActionListener {
                 cl.setCedula(this.pcl.jTextFieldCed.getText().trim());
                 cl.setNombre(this.pcl.jTextFieldNom.getText().trim());
                 cl.setDireccion(this.pcl.jTextFieldDirec.getText().trim());
-                cl.setCodigoProv(cod.getCode(this.pcl.jComboBoxProv.getSelectedItem().toString()));
-                cl.setCodigoCiu(cod.getCode(this.pcl.jComboBoxCiu.getSelectedItem().toString()));
+                cl.setCodigoProvincia(cod.getCode(this.pcl.jComboBoxProv.getSelectedItem().toString()));
+                cl.setCodigoCiudad(cod.getCode(this.pcl.jComboBoxCiu.getSelectedItem().toString()));
                 ICliente icl = new ClientImpl();
                 if (!icl.existe(cl.getCedula()) && ced.largo(cl.getCedula()) && cdat.dosP(cl.getNombre())
                         && cl.getNombre().length() <= 49 && cl.getDireccion().length() <= 49
@@ -112,10 +112,10 @@ public class ControlCliente implements ActionListener {
                     ProvinciaImpl pi = new ProvinciaImpl();
                     ArrayList<Cliente> clist = icl.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
-                        clist.get(i).setCodigoCiu(clist.get(i).getCodigoCiu() + ": " + ci.nombre(clist.get(i).getCodigoCiu()));
-                        clist.get(i).setCodigoProv(clist.get(i).getCodigoProv() + ": " + pi.nombre(clist.get(i).getCodigoProv()));
+                        clist.get(i).setCodigoCiudad(clist.get(i).getCodigoCiudad() + ": " + ci.nombre(clist.get(i).getCodigoCiudad()));
+                        clist.get(i).setCodigoProvincia(clist.get(i).getCodigoProvincia() + ": " + pi.nombre(clist.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{clist.get(i).getCedula(), clist.get(i).getNombre(), clist.get(i).getDireccion(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getCodigoCiu()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getCodigoCiudad()});
                         this.pcl.jComboBoxCed.addItem(clist.get(i).getCedula());
                     }
                 } else {
@@ -171,8 +171,8 @@ public class ControlCliente implements ActionListener {
                 cl.setCedula(this.pcl.jComboBoxCed.getSelectedItem().toString());
                 cl.setNombre(this.pcl.jTextFieldNom.getText().trim());
                 cl.setDireccion(this.pcl.jTextFieldDirec.getText().trim());
-                cl.setCodigoCiu(cod.getCode(this.pcl.jComboBoxCiu.getSelectedItem().toString()));
-                cl.setCodigoProv(cod.getCode(this.pcl.jComboBoxProv.getSelectedItem().toString()));
+                cl.setCodigoCiudad(cod.getCode(this.pcl.jComboBoxCiu.getSelectedItem().toString()));
+                cl.setCodigoProvincia(cod.getCode(this.pcl.jComboBoxProv.getSelectedItem().toString()));
                 if (cdat.dosP(cl.getNombre()) && cdat.tresP(cl.getDireccion())
                         && cl.getNombre().length() <= 49 && cl.getDireccion().length() <= 49
                         && this.pcl.jComboBoxCed.getItemCount() != 1 && !cl.getCedula().equals("Clientes")) {
@@ -191,10 +191,10 @@ public class ControlCliente implements ActionListener {
                     ProvinciaImpl pi = new ProvinciaImpl();
                     ArrayList<Cliente> clist = icl.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
-                        clist.get(i).setCodigoCiu(clist.get(i).getCodigoCiu() + ": " + ci.nombre(clist.get(i).getCodigoCiu()));
-                        clist.get(i).setCodigoProv(clist.get(i).getCodigoProv() + ": " + pi.nombre(clist.get(i).getCodigoProv()));
+                        clist.get(i).setCodigoCiudad(clist.get(i).getCodigoCiudad() + ": " + ci.nombre(clist.get(i).getCodigoCiudad()));
+                        clist.get(i).setCodigoProvincia(clist.get(i).getCodigoProvincia() + ": " + pi.nombre(clist.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{clist.get(i).getCedula(), clist.get(i).getNombre(), clist.get(i).getDireccion(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getCodigoCiu()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getCodigoCiudad()});
                         this.pcl.jComboBoxCed.addItem(clist.get(i).getCedula());
                     }
                 } else {
@@ -263,10 +263,10 @@ public class ControlCliente implements ActionListener {
                     ProvinciaImpl pi = new ProvinciaImpl();
                     ArrayList<Cliente> clist = icl.listarTodo();
                     for (int i = 0; i < clist.size(); i++) {
-                        clist.get(i).setCodigoCiu(clist.get(i).getCodigoCiu() + ": " + ci.nombre(clist.get(i).getCodigoCiu()));
-                        clist.get(i).setCodigoProv(clist.get(i).getCodigoProv() + ": " + pi.nombre(clist.get(i).getCodigoProv()));
+                        clist.get(i).setCodigoCiudad(clist.get(i).getCodigoCiudad() + ": " + ci.nombre(clist.get(i).getCodigoCiudad()));
+                        clist.get(i).setCodigoProvincia(clist.get(i).getCodigoProvincia() + ": " + pi.nombre(clist.get(i).getCodigoProvincia()));
                         modelo.addRow(new Object[]{clist.get(i).getCedula(), clist.get(i).getNombre(), clist.get(i).getDireccion(),
-                            clist.get(i).getCodigoProv(), clist.get(i).getCodigoCiu()});
+                            clist.get(i).getCodigoProvincia(), clist.get(i).getCodigoCiudad()});
                         this.pcl.jComboBoxCed.addItem(clist.get(i).getCedula());
                         this.pcl.jComboBoxCiu.addItem(clist.get(i).getCedula());
                     }

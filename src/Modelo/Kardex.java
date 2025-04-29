@@ -12,9 +12,9 @@ public class Kardex {
     private String codigo;
     private String producto;
     private String fecha;
-    private String codigoC;
-    private String codigoV;
-    private float costoU;
+    private String codigoCompra;
+    private String codigoVenta;
+    private float costoUnitario;
     private int entrada;
     private int salida;
     private int inventario;
@@ -43,28 +43,28 @@ public class Kardex {
         this.fecha = fecha;
     }
 
-    public String getCodigoC() {
-        return this.codigoC;
+    public String getCodigoCompra() {
+        return this.codigoCompra;
     }
 
-    public void setCodigoC(String codigoC) {
-        this.codigoC = codigoC;
+    public void setCodigoCompra(String codigoCompra) {
+        this.codigoCompra = codigoCompra;
     }
 
-    public String getCodigoV() {
-        return this.codigoV;
+    public String getCodigoVenta() {
+        return this.codigoVenta;
     }
 
-    public void setCodigoV(String codigoV) {
-        this.codigoV = codigoV;
+    public void setCodigoVenta(String codigoVenta) {
+        this.codigoVenta = codigoVenta;
     }
     
-    public float getCostoU() {
-        return this.costoU;
+    public float getCostoUnitario() {
+        return this.costoUnitario;
     }
 
-    public void setCostoU(float costoU) {
-        this.costoU = costoU;
+    public void setCostoUnitario(float costoUnitario) {
+        this.costoUnitario = costoUnitario;
     }
 
     public int getEntrada() {

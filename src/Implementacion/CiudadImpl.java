@@ -24,7 +24,7 @@ public class CiudadImpl extends MySQL implements ICiudad {
             if (super.verifConexion() == true) {
                 PreparedStatement ps = super.con.prepareStatement("insert into ciudad(nombre,codigoProv) values(?,?);");
                 ps.setString(1, c.getNombre());
-                ps.setString(2, c.getCodigoProv());
+                ps.setString(2, c.getCodigoProvincia());
                 ps.executeUpdate();
                 ps.close();
             } else {
@@ -44,7 +44,7 @@ public class CiudadImpl extends MySQL implements ICiudad {
             if (super.verifConexion() == true) {
                 PreparedStatement ps = super.con.prepareStatement("update ciudad set nombre=?,codigoProv=? where codigo =?;");
                 ps.setString(1, c.getNombre());
-                ps.setString(2, c.getCodigoProv());
+                ps.setString(2, c.getCodigoProvincia());
                 ps.setString(3, c.getCodigo());
                 ps.executeUpdate();
                 ps.close();
@@ -70,11 +70,11 @@ public class CiudadImpl extends MySQL implements ICiudad {
                     Ciudad ciu = new Ciudad();
                     ciu.setNombre(rs.getString("nombre"));
                     ciu.setCodigo(rs.getString("codigo"));
-                    ciu.setCodigoProv(rs.getString("codigoProv"));
+                    ciu.setCodigoProvincia(rs.getString("codigoProv"));
                     clist.add(ciu);
                 }
                 for (int i = 0; i < clist.size(); i++) {
-                    this.provAdjunta(clist.get(i));
+                    this.provinciaAdjunta(clist.get(i));
                 }
                 rs.close();
                 ps.close();
@@ -109,16 +109,16 @@ public class CiudadImpl extends MySQL implements ICiudad {
     }
 
     @Override
-    public void provAdjunta(Ciudad c) throws Exception {
+    public void provinciaAdjunta(Ciudad c) throws Exception {
         try {
             super.conectar();
             if (super.verifConexion() == true) {
                 PreparedStatement ps = super.con.prepareStatement("SELECT nombre FROM provincia WHERE codigo =?;");
-                ps.setString(1, c.getCodigoProv());
+                ps.setString(1, c.getCodigoProvincia());
                 ResultSet rs = ps.executeQuery();
 
                 if (rs.next()) {
-                    c.setNombreProv(rs.getString("nombre"));
+                    c.setNombreProvincia(rs.getString("nombre"));
                 }
                 rs.close();
                 ps.close();
@@ -133,7 +133,7 @@ public class CiudadImpl extends MySQL implements ICiudad {
     }
 
     @Override
-    public ArrayList<String> provExistente() throws Exception {
+    public ArrayList<String> provinciaExistente() throws Exception {
         ArrayList<String> plist = new ArrayList<>();
         try {
             super.conectar();
@@ -158,7 +158,7 @@ public class CiudadImpl extends MySQL implements ICiudad {
         return plist;
     }
     @Override
-    public boolean ciuUsada(String cod) throws Exception {
+    public boolean ciudadUsada(String cod) throws Exception {
         boolean verif = false;
         try {
             super.conectar();

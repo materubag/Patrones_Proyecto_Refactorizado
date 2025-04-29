@@ -10,7 +10,7 @@ import Interface.IProducto;
 import Modelo.Producto;
 import Recursos.Codigo;
 import Recursos.QR;
-import Vista.PProductos;
+import Vista.PanelProductos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -24,9 +24,9 @@ import javax.swing.table.DefaultTableModel;
  */
 public class ControlProducto implements ActionListener {
 
-    PProductos ppd = new PProductos();
+    PanelProductos ppd = new PanelProductos();
 
-    public ControlProducto(PProductos ppd) {
+    public ControlProducto(PanelProductos ppd) {
         this.ppd = ppd;
         this.ppd.jButtonAccion.addActionListener(this);
         this.ppd.jButtonAdd.addActionListener(this);

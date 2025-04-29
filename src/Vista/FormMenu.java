@@ -10,17 +10,17 @@ import java.awt.BorderLayout;
  *
  * @author mateo
  */
-public class frmMenu extends javax.swing.JFrame {
+public class FormMenu extends javax.swing.JFrame {
 
     /**
      * Creates new form PLogin
      */
-    public frmMenu() {
+    public FormMenu() {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        POpciones op =new POpciones();
-        PLogin lg = new PLogin();
+        PanelOpciones op =new PanelOpciones();
+        PanelLogin lg = new PanelLogin();
         lg.setSize(1000, 720);
         lg.setLocation(0, 0);
         
@@ -75,7 +75,7 @@ public class frmMenu extends javax.swing.JFrame {
         });
 
         jMenuMe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/zIMG/menu25.png"))); // NOI18N
-        jMenuMe.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jMenuMe.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuMe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuMeActionPerformed(evt);
