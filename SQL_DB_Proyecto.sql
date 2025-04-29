@@ -23,6 +23,9 @@ CREATE TABLE usuario (
     permisos VARCHAR(50)
 );
 
+INSERT INTO usuario (nombre, clave, estado, permisos)
+VALUES ('root', 'DqwBwDN0RttQ0IJfOaXYng==', 'activo', '111111111');
+
 -- Tabla CLIENTE
 CREATE TABLE cliente (
     cedula VARCHAR(20) PRIMARY KEY,
