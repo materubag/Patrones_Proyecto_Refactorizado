@@ -1,17 +1,16 @@
 CREATE DATABASE IF NOT EXISTS proyecto;
 USE proyecto;
 
--- Tabla PROVINCIA
 CREATE TABLE provincia (
-    codigo VARCHAR(10) PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL
 );
 
 -- Tabla CIUDAD
 CREATE TABLE ciudad (
-    codigo VARCHAR(10) PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
-    codigoProv VARCHAR(10),
+    codigoProv INT,
     FOREIGN KEY (codigoProv) REFERENCES provincia(codigo)
 );
 
