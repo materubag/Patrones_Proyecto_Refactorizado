@@ -76,7 +76,7 @@ CREATE TABLE venta (
 
 -- Tabla KARDEX
 CREATE TABLE kardex (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     producto INT,
     fecha VARCHAR(20) NOT NULL,
     codigoC INT, 
