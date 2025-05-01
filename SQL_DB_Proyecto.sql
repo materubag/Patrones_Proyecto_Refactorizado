@@ -59,7 +59,7 @@ CREATE TABLE producto (
 -- Tabla COMPRA
 CREATE TABLE compra (
     codigo INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE NOT NULL,
+    fecha VARCHAR(20) NOT NULL,
     proveedor VARCHAR(20),
     total DECIMAL(10, 2),
     FOREIGN KEY (proveedor) REFERENCES proveedor(ruc)
@@ -68,7 +68,7 @@ CREATE TABLE compra (
 -- Tabla VENTA
 CREATE TABLE venta (
     codigo INT AUTO_INCREMENT PRIMARY KEY,
-    fecha DATE NOT NULL,
+    fecha VARCHAR(20) NOT NULL,
     cliente VARCHAR(20),
     total DECIMAL(10, 2),
     FOREIGN KEY (cliente) REFERENCES cliente(cedula)
@@ -78,7 +78,7 @@ CREATE TABLE venta (
 CREATE TABLE kardex (
     id INT AUTO_INCREMENT PRIMARY KEY,
     producto INT,
-    fecha DATE NOT NULL,
+    fecha VARCHAR(20) NOT NULL,
     codigoC INT, 
     codigoV INT, 
     costoU DECIMAL(10,2),
