@@ -50,7 +50,7 @@ CREATE TABLE proveedor (
 
 -- Tabla PRODUCTO
 CREATE TABLE producto (
-    codigo VARCHAR(20) PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     rucProveedor VARCHAR(20),
     FOREIGN KEY (rucProveedor) REFERENCES proveedor(ruc)
@@ -58,7 +58,7 @@ CREATE TABLE producto (
 
 -- Tabla COMPRA
 CREATE TABLE compra (
-    codigo VARCHAR(20) PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE NOT NULL,
     proveedor VARCHAR(20),
     total DECIMAL(10, 2),
@@ -67,7 +67,7 @@ CREATE TABLE compra (
 
 -- Tabla VENTA
 CREATE TABLE venta (
-    codigo VARCHAR(20) PRIMARY KEY,
+    codigo INT AUTO_INCREMENT PRIMARY KEY,
     fecha DATE NOT NULL,
     cliente VARCHAR(20),
     total DECIMAL(10, 2),
@@ -77,10 +77,10 @@ CREATE TABLE venta (
 -- Tabla KARDEX
 CREATE TABLE kardex (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    producto VARCHAR(20),
+    producto INT,
     fecha DATE NOT NULL,
-    codigoC VARCHAR(20), -- puede referenciar a compra
-    codigoV VARCHAR(20), -- puede referenciar a venta
+    codigoC INT, 
+    codigoV INT, 
     costoU DECIMAL(10,2),
     entrada INT,
     salida INT,
