@@ -30,8 +30,8 @@ CREATE TABLE cliente (
     cedula VARCHAR(20) PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
     direccion VARCHAR(200),
-    codigoProv VARCHAR(10),
-    codigoCiu VARCHAR(10),
+    codigoProv INT,
+    codigoCiu INT,
     FOREIGN KEY (codigoProv) REFERENCES provincia(codigo),
     FOREIGN KEY (codigoCiu) REFERENCES ciudad(codigo)
 );
@@ -42,8 +42,8 @@ CREATE TABLE proveedor (
     nombre VARCHAR(100) NOT NULL,
     direccion VARCHAR(200),
     telefono VARCHAR(20),
-    codigoProv VARCHAR(10),
-    codigoCiu VARCHAR(10),
+    codigoProv INT,
+    codigoCiu INT,
     FOREIGN KEY (codigoProv) REFERENCES provincia(codigo),
     FOREIGN KEY (codigoCiu) REFERENCES ciudad(codigo)
 );
